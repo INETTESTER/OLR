@@ -3,18 +3,18 @@ import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
 
-import { ran } from '../api/script.js';
-import { callback_scb } from '../api/getJson.js';
+import { action } from '../api/action.js';
+import { searchA } from '../api/searchA.js';
+import { search } from '../api/search.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  response = ran()
-  //response = callback_scb(scenario)
-
-  
+  //response = action()
+  //response = searchA()
+  //response = search()
   error_check(response);
   sleep(1)
 }
